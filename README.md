@@ -1,13 +1,13 @@
 # React + Vite
 
-#Prerequisites
+# Prerequisites
 Node.js and npm installed on your machine
 MongoDB set up locally or using a cloud service like MongoDB Atlas
 A Firebase account (for authentication)
 A Stripe or SSLCommerz account (for payment processing)
-#Step-by-Step Setup
+# Step-by-Step Setup
 
-#Clone the Repository. Install Dependencies. Set Up Firebase Authentication
+Clone the Repository. Install Dependencies. Set Up Firebase Authentication
 
 Go to the Firebase Console and create a new project.
 Set up Authentication and enable Email/Password sign-in.
