@@ -50,7 +50,7 @@ const EditProducts = () => {
       {showToast && (
         <div className="toast toast-center toast-middle">
         <div className="alert alert-success">
-          <span>Edit successfully.</span>
+          <span>Edit successfullly.</span>
         </div>
       </div>
       )}
