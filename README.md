@@ -1,4 +1,4 @@
-# React + Vite
+# Product Management Dashboard with Payment System
 
 # Prerequisites
 Node.js and npm installed on your machine
