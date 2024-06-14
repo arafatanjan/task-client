@@ -21,13 +21,13 @@ Log Out: Click the log-out button to end the session.
 # Dashboard Features
 View Products: See the list of products on the dashboard.
 Add Products: Use the form to add new products (name, description, price, image).
-Edit Products: Edit the details of your products.
-Delete Products: Remove your products from the list.
+Edit Products: Edit the details of  products by the user created.
+Delete Products: Remove products from the list by the user created.
 Purchase Products: Buy products from other users and see the stock decrease.
 #Payment Integration
-Make Payments: Use Stripe or SSLCommerz to make secure payments for products.
+Make Payments: Use  SSLCommerz to make secure payments for products.
 Update Stock: Ensure that purchasing a product decreases its stock count
 
 # Security Measures
 JWT Authentication: Secure user operations with JWT.
-XSS and CSRF Protection: Implement measures to protect against these common vulnerabilities
+XSS and CSRF Protection: Implement measures to protect against these common vulnerabilities. Due some lacking it has been not implemented completely.
