@@ -16,13 +16,13 @@ const Dashboard = ({email}) => {
   
 
 useEffect(() => {
-  fetch(`http://localhost:5000/user/${user?.email}`)
+  fetch(`https://task-server-fawn.vercel.app/user/${user?.email}`)
     .then((res) => res.json())
     .then((data) => setUserInfo(data));
 }, [user]);
 
 useEffect(() => {
-  fetch(`http://localhost:5000/users`)
+  fetch(`https://task-server-fawn.vercel.app/users`)
     .then((res) => res.json())
     .then((data) => setTotaluserInfo(data));
 }, [user]);

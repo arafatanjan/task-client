@@ -26,7 +26,7 @@ export default function EditProfile() {
         return;
       }
     fetch(
-      `http://localhost:5000/user/${data?.email}`,
+      `https://task-server-fawn.vercel.app/user/${data?.email}`,
       {
         method: "PATCH",
         headers: {

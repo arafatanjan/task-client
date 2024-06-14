@@ -13,8 +13,8 @@ const Home = () => {
         <div>
             <Banner/>
              <Products data={data} /> 
-            <Accordian/>
-            <CardComponent/> 
+            {/* <Accordian/> */}
+            {/* <CardComponent/>  */}
             
             
         </div>

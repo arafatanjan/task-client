@@ -35,7 +35,7 @@ const ProductDetails = () => {
     if (!window.confirm('Are you sure you want to place order?')) {
       return;
     }
-    await fetch(`http://localhost:5000/order/${ball._id}`, {
+    await fetch(`https://task-server-fawn.vercel.app/order/${ball._id}`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -78,20 +78,13 @@ const ProductDetails = () => {
     </div>
 </div>
 <div style={{ maxWidth: '800px', flex: 1 }}>
-{showToast && (
-        <div className="toast toast-center toast-middle">
-        <div className="alert alert-success">
-          <span>Edit successfully.</span>
-        </div>
-      </div>
-      )}
         <form onSubmit={handleSubmit}>
           <div className="mt-2">
             <input
               className="bg-gray-100 p-4 w-full border border-black rounded-lg"
               type="text"
               name="name"
-              placeholder="name"
+              placeholder="customer name"
               
               onChange={(e) => setName(e.target.value)}
             />
@@ -132,7 +125,7 @@ const ProductDetails = () => {
               className="bg-gray-100 p-4 w-full border border-black rounded-lg"
               type="textarea"
               name="address"
-              placeholder="adress"
+              placeholder="customer adress"
               // value={image_url}
               onChange={(e) => setAddress(e.target.value)}
             />

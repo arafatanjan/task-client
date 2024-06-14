@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Dashboard from "./Dashboard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Login = () => {
   const { signIn, user } = useAuth();
@@ -22,8 +23,22 @@ const Login = () => {
 
     //console.log(email, password);
 
-    await signIn(email, password);
-    //toast.success("Logged in successfully!");
+    await signIn(email, password)
+    // .then(result=>{
+    //   const loggedinuser= result.user;
+    //   console.log(loggedinuser)
+    //   const user= {email};
+
+    //   axios.post('https://task-server-fawn.vercel.app/jwt', user, {withCredentials: true})
+    //   .then(res=> {
+    //     console.log(res.data)
+    //     if (res.data.success){
+    //       navigate(location?.state ? location?.state : '/')
+    //     }
+
+    //   })
+    // })
+    
   };
 
   useEffect(() => {

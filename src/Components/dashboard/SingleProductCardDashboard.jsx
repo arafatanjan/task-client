@@ -2,15 +2,18 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 //import { toast } from 'react-toastify';
 
 const SingleProductCardDashboard = ({ course, onDelete }) => {
-  const { _id, title, brand, price, description, image_url } = course;
+  const { _id, title, brand, price, stock, description, image_url, email } = course;
+  const { user } = useAuth();
+  console.log(user.email)
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const token = localStorage.getItem("token");
 
-//https://assignment-server-nine-olive.vercel.app
+
 
 const handleDelete = async () => {
   const token = localStorage.getItem("token");
@@ -18,24 +21,37 @@ const handleDelete = async () => {
     return;
   }
 
-  await fetch(`http://localhost:5000/courses/${_id}`, {
+//   await fetch(`https://task-server-fawn.vercel.app/courses/${_id}`, {
+//     method: "DELETE",
+//     headers: {
+//       "Content-type": "application/json",
+//       authorization: `Bearer ${token}`,
+//     },
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       localStorage.setItem("token", data?.token); 
+//       toast.success("Product Deleted");
+//       onDelete(_id);
+//     });
+// };
+
+  await fetch(`https://task-server-fawn.vercel.app/courses/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",
-      authorization: `Bearer ${token}`,
+      //authorization: `Bearer ${token}`,
     },
   })
     .then((res) => res.json())
     .then((data) => {
-      localStorage.setItem("token", data?.token); 
-      
-      // setToastMessage("Deleted successfully.");
-      // setShowToast(true);
-      // setTimeout(() => setShowToast(false),3000);
+      //localStorage.setItem("token", data?.token); 
       toast.success("Product Deleted");
       onDelete(_id);
     });
 };
+
+
 
   return (
   
@@ -47,6 +63,11 @@ const handleDelete = async () => {
           </div>
         </div>
       )} */}
+      <div className='shadow-lg relative rounded-3xl border p-3 flex flex-col text-indigo-900'>
+  <div className='rounded-full grid place-items-center absolute top-2 right-2 bg-indigo-500 text-white h-8 w-8 font-bold'>
+    <p>{stock}</p>
+  </div>
+</div>
       <figure>
         <img src={image_url} alt="course" className="object-cover w-96 h-100"/>
       </figure>
@@ -59,14 +80,33 @@ const handleDelete = async () => {
         </div>
         <div className="card-actions justify-center space-x-1">
           <button className="btn bg-indigo-500 text-white flex items-center space-x-2">
-            <Link to={`/products/${_id}`}>See details</Link>
+            <Link to={`/products/${_id}`}>Buy Now</Link>
           </button>
-          <button className="btn bg-green-600 text-white">
-            <Link to={`edit/${_id}`}>Edit</Link>
-          </button>
-          <button onClick={handleDelete} className="btn bg-red-500 text-white">
-            Delete
-          </button>
+          {/* <button className="btn bg-green-600 text-white">
+      <Link to={`edit/${_id}`} className="text-white">Edit</Link>
+    </button>
+    <button onClick={handleDelete} className="btn bg-red-500 text-white">
+      Delete
+    </button> */}
+          {user.email === email ? (
+  <>
+    <button className="btn bg-green-600 text-white">
+      <Link to={`edit/${_id}`} className="text-white">Edit</Link>
+    </button>
+    <button onClick={handleDelete} className="btn bg-red-500 text-white">
+      Delete
+    </button>
+  </>
+) : (
+  <>
+    <button className="btn bg-green-600 text-white" disabled>
+      <span className="text-white">Edit</span>
+    </button>
+    <button className="btn bg-red-500 text-white" disabled>
+      <span className="text-white">Delete</span>
+    </button>
+  </>
+)}    
         </div>
       </div>
     </div>

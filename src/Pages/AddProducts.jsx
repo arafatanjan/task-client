@@ -1,7 +1,11 @@
 import { useState } from "react";
+import useAuth from "../Hooks/useAuth";
 
 const AddProducts = () => {
    const [showToast, setShowToast] = useState(false);
+   const { user } = useAuth();
+      console.log(user.email)
+
     const handleSubmit = async (e) => {
       
       const token = localStorage.getItem("token");
@@ -10,17 +14,19 @@ const AddProducts = () => {
       const form = e.target;
       //const id = form.id.value;
       const title = form.title.value;
+      const email = form.email.value;
       const brand = form.brand.value;
       const price = form.price.value;
+      const stock = form.stock.value;
       const description = form.description.value;
       const image_url = form.image_url.value;
   
-      const data = { title, brand, price, description, image_url };
+      const data = {email, title, brand, price, description, image_url, stock };
       if (!window.confirm('Are you sure you want to add this item?')) {
         return;
       }
       
-      await fetch("http://localhost:5000/courses", {
+      await fetch("https://task-server-fawn.vercel.app/courses", {
         method: "POST",
         headers: {
           "Content-type": "application/json",       
@@ -49,6 +55,15 @@ const AddProducts = () => {
       )}
         <div className="my-16">
           <form onSubmit={handleSubmit}>
+          <div className="mt-2">
+              <input
+                className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+                type="text"
+                name="email"
+                placeholder="email"
+                value={user?.email}
+              />
+            </div> 
             <div className="mt-2">
               <input
                 className="bg-gray-100 p-4 w-full border border-black rounded-lg"
@@ -56,13 +71,13 @@ const AddProducts = () => {
                 name="title"
                 placeholder="Title"
               />
-            </div>
+            </div>          
             <div className="mt-2">
               <input
                 className="bg-gray-100 p-4 w-full border border-black rounded-lg"
                 type="text"
                 name="brand"
-                placeholder="Brand"
+                placeholder="Model"
               />
             </div>
             <div className="mt-2">
@@ -71,6 +86,15 @@ const AddProducts = () => {
                 type="number"
                 name="price"
                 placeholder="Price"
+              />
+            </div>
+            
+            <div className="mt-2">
+              <input
+                className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+                type="number"
+                name="stock"
+                placeholder="Stock"
               />
             </div>
             <div className="mt-2">

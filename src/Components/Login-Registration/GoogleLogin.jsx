@@ -16,7 +16,7 @@ const GoogleLogin = () => {
           photo: data?.user?.photoUrl
          };
           
-         fetch("http://localhost:5000/user", {
+         fetch("https://task-server-fawn.vercel.app/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const GoogleLogin = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            localStorage.setItem("token", data?.token);
+            //localStorage.setItem("token", data?.token);
           });
         }
       });

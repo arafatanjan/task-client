@@ -42,12 +42,12 @@ const Navbar = () => {
           )}
         </ul>
       </div>
-      <a href="/" className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">AI Courses</a>
+      <a href="/" className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">Keyboard world</a>
     </div>
     <div className="hidden lg:flex items-center space-x-2">
       <ul className="menu menu-horizontal px-1">
         <li><Link to={"/"}>Home</Link></li>
-        <li><Link to={"/about"}>About</Link></li>
+        {/* <li><Link to={"/about"}>About</Link></li> */}
         {/* <li><Link to={"/alumni"}>Alumni</Link></li> */}
         {!user && (
           <>

@@ -9,7 +9,7 @@ const AllProducts = () => {
   
 
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("https://task-server-fawn.vercel.app/courses")
       .then((res) => res.json())
       .then((data) =>{setProducts(data);
         setSearchResult(data)
