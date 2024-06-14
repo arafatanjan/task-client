@@ -1,23 +1,33 @@
-# React + Vite
+# Product Management Dashboard with Payment System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Prerequisites
+Node.js and npm installed on your machine
+MongoDB set up locally or using a cloud service like MongoDB Atlas
+A Firebase account (for authentication)
+A Stripe or SSLCommerz account (for payment processing)
+# Step-by-Step Setup
 
-Currently, two official plugins are available:
+Clone the Repository. Install Dependencies. Set Up Firebase Authentication
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Go to the Firebase Console and create a new project.
+Set up Authentication and enable Email/Password sign-in.
+Copy the Firebase config object and add it to your React app (src/firebaseConfig.js).
 
-Features
-Home
-About
-Alumni
-Dashboard
+# Authentication
+Sign Up: Navigate to the sign-up page and create a new account.
+Log In: Use the credentials to log in to the dashboard.
+Log Out: Click the log-out button to end the session.
 
-For using jwt need google login/ registration everytime due to vercel issue
+# Dashboard Features
+View Products: See the list of products on the dashboard.
+Add Products: Use the form to add new products (name, description, price, image).
+Edit Products: Edit the details of  products by the user created.
+Delete Products: Remove products from the list by the user created.
+Purchase Products: Buy products from other users and see the stock decrease.
+#Payment Integration
+Make Payments: Use  SSLCommerz to make secure payments for products.
+Update Stock: Ensure that purchasing a product decreases its stock count
 
-setup procedure
-Install Node.js and npm.
-Create a React app using Create React App.
-Navigate to the project directory.
-Start the development server with npm start.
-Open the project in a code editor.
+# Security Measures
+JWT Authentication: Secure user operations with JWT.
+XSS and CSRF Protection: Implement measures to protect against these common vulnerabilities. Due some lacking it has been not implemented completely.
