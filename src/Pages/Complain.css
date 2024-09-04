@@ -1,0 +1,96 @@
+/* Basic form styling */
+.form {
+    max-width: 600px;
+    margin: 0 ;
+    padding: 15px;
+  }
+  
+  /* Row and column layout */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  
+  .col-sm-2,
+  .col-sm-10,
+  .col-sm-1 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .col-sm-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+  
+  .col-sm-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  
+  .col-sm-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+  }
+  
+  /* Offset for centering */
+  .offset-sm-5 {
+    margin-left: 41.66667%;
+  }
+  
+  /* Form group and input styling */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  .form-control::placeholder {
+    color: #6c757d;
+  }
+  
+  .col-form-label {
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+  
+  /* Button styling */
+  /* .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  } */
+  
+  .btn-primary {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    color: #ffffff;
+    background-color: #16181b;
+    border-color: #004085;
+  }
+  

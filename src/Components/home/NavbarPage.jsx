@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Button, NavLink } from 'react-bootstrap';
+// import useAuth from '../../Hook/useAuth';
 import useAuth from "../../Hooks/useAuth";
+import './Navbar.css';
 
-const Navbar = () => {
+const NavbarPage = () => {
   const { logout, user } = useAuth();
 
   const handleLogout = async()=>{
@@ -9,7 +16,9 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-base-100 flex justify-between items-center px-4 lg:px-8 py-2">
+    
+   <>
+    {/* <div className="navbar bg-base-100 flex justify-between items-center px-4 lg:px-8 py-2">
     <div className="flex items-center">
       <div className="dropdown lg:hidden">
         <div tabIndex={0} role="button" className="btn btn-ghost">
@@ -25,7 +34,7 @@ const Navbar = () => {
         </div>
         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
           <li><Link to={"/"}>Home</Link></li>
-          <li><Link to={"/about"}>About</Link></li>
+          <li><Link to={"//merchantcorner"}>About</Link></li>
           {!user && (
             <>
               <li><Link to={"/login"}>Login</Link></li>
@@ -47,8 +56,7 @@ const Navbar = () => {
     <div className="hidden lg:flex items-center space-x-2">
       <ul className="menu menu-horizontal px-1">
         <li><Link to={"/"}>Home</Link></li>
-        {/* <li><Link to={"/about"}>About</Link></li> */}
-        {/* <li><Link to={"/alumni"}>Alumni</Link></li> */}
+       
         {!user && (
           <>
             <li><Link to={"/login"}>Login</Link></li>
@@ -68,8 +76,35 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
+ 
+
+<div className="topbar" >
+ 
+<ul className="nav  " style={{color: 'white', marginBottom: '100px'}}>
+      <li class="nav-item">
+      <Link class="nav" to={"/merchantcorner"}>Merchant Corner</Link>
+      </li>
+      <li class="nav-item">     
+      <Link class="nav" to={"/complain"}>Complain & Suggestion</Link>
+      </li>
+      <li class="nav">
+          <a class="nav" href="">Track Order</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav" href="">Login</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav" href="">বাংলা</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav" href="">ENG</a>
+      </li>
+  </ul>
+  
+</div >
+</>
   );
 };
 
-export default Navbar;
+export default NavbarPage;

@@ -1,0 +1,64 @@
+.muslim-fashion-section {
+    display: flex;
+    justify-content: space-between;
+     align-items: center; 
+    flex-wrap: wrap;
+    width: 1200px;
+    margin-right: 1px;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  
+  .header {
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .header img {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .header h2 {
+    font-size: 24px;
+    color: #f39c12;
+    font-family: 'SolaimanLipi', sans-serif; /* Assuming a Bengali font */
+    font-weight: bold;
+  }
+  
+  .categories {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .category-card {
+    width: 150px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px 0px;
+    background: #fff;
+    /* border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    position: relative;
+  }
+  
+  .category-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .category-name {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+    font-family: 'SolaimanLipi', sans-serif; /* Assuming a Bengali font */
+    background-color: #bbb;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+  }
+  

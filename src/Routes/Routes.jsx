@@ -15,6 +15,8 @@ import EditProducts from "../Pages/EditProducts";
 import EditProfile from "../Pages/EditProfile";
 import PaymentSuccess from "../Pages/PaymentSuccess";
 import PaymentFail from "../Pages/PaymentFail";
+import MerchantCorner from "../Pages/MerchantCorner";
+import Complain from "../Pages/Complain";
 // import Alumni from "../Pages/Alumni";
 
 
@@ -36,8 +38,12 @@ export const router = createBrowserRouter([
             fetch(`https://task-server-fawn.vercel.app/courses/${params.id}`),
         },
         {
-          path: "/about",
-          element: <About />,
+          path: "/merchantcorner",
+          element: <MerchantCorner />,
+        },       
+        {
+          path: "/complain",
+          element: <Complain/>,
         },       
          {
            path: "/payment/success/:tranId",

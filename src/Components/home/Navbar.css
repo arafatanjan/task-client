@@ -1,0 +1,83 @@
+ .topbar {
+    display: flex;
+    justify-content: end;
+    background-color: #77787B;
+    color: #fff;
+    font-size: small;
+    border: none;
+    height: 37px;
+    padding-right: 15rem;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2; 
+} 
+
+.topbar ul{
+    display: flex;
+
+    text-align: center; 
+}
+
+.topbar ul li{
+    display: flex;
+    justify-content: center;
+} 
+
+/* .topbar {
+    background-color: #77787B;
+    color: #fff;
+    font-size: small;
+    border: none;
+    height: 37px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 2; 
+    
+} */
+
+
+.topbar nav a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: black;
+    padding: 0 5px;
+
+}
+
+.topbar nav a:hover {
+    background-color: lightblue;
+    color: blueviolet;
+}
+
+
+
+
+/* unvisited link */
+a:link {
+    color: white;
+  }
+  
+  /* visited link */
+  a:visited {
+    text-decoration-line: underline;
+  }
+  
+  /* mouse over link */
+  /* a:hover {
+    color: hotpink;
+  } */
+  
+  /* selected link */
+  a:active {
+    color: white;
+    text-decoration: underline;
+  }
+
+  
+li {
+    
+    margin-right: 10px;
+}
+
