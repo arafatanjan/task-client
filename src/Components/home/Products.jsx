@@ -58,7 +58,7 @@ const Products = ({}) => {
 
     return (
       <div>
-        <div className="container">
+        <div className="container-fluid">
           <div className="buttons d-flex justify-content-center pb-3">
             <button
               className="tile_div"
@@ -191,7 +191,7 @@ const Products = ({}) => {
 
   return (
     <div className="d-flex justify-content-center">
-    <div className="" style={{ marginTop: "20px",marginBottom: "4rem", minWidth:'1250px', padding:'0px 0rem' }}>
+    <div className="" style={{ marginTop: "20px",marginBottom: "4rem", minWidth:'1250px', padding:'0 10%' }}>
       <div className="row" style={{ marginBottom: "1rem"}}>
         <div>
           <div>

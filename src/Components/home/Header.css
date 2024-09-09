@@ -2,91 +2,47 @@
     margin-top: 10px;
 } */
 
-.header nav a {
-    text-decoration: none;
-    margin-right: 20px;
-    color: black;
-    padding: 0 5px;
 
-}
-
-.header nav a:hover {
-    background-color: lightblue;
-    color: blueviolet;
-}
-
-.middle-inner {
+/* .middle-inner {
     padding: 47px 0;
     background: #fff;
-    /* border-top: 1px solid #eee; */
-    height: 120px;
-    margin-top: 1rem;
-    
-}
+    padding-bottom: 30%;
+    height: 120px;   
+} */
 
 .container-header {
-    width:auto;
-    display: flex;
-    
-    justify-content: center;
-    margin-right: 0rem;
-    
+    width:100%;
+     /* display: flex;  */
+    margin-top: 5%;
+     /* justify-content: around;     */
+    padding:0 6% 1% 7% ;
 }
 
-.row {
+/* .row {
     margin-right: -12px;
     margin-left: -12px;
     display: flex;
     flex-wrap: wrap;
-}
+} */
+
 
 .logo {
     float: left;
-    margin: -7px 0 0;
-    width: 120px;
+    /* margin-left: -20%; */
+    margin-top: -10%;
+    padding: 5% 0;
+    width: 65%;
 }
 
-.search-top {
-    opacity: 1;
-    visibility: visible;
-    top: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    top: 0;
-}
-
-.search-top {
-    display: none;
-}
-
-.search-form {
-    position: absolute;
-    left: -128px;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    top: 46px;
-    background: #ffffff75;
-    padding: 7px;
-    border-radius: 5px;
-    transform: scaleY(0);
-    box-shadow: 0px 4px 7px #0000003b;
-    padding: 0;
-    border-radius: 0;
-}
 
 .search-bar-top {
     text-align: center;
     margin-top: 11px;
+    width:100%;
 }
 
 .search-bar {
-    width: 745px;
+    width: 100%;
     height: 40px;
     display: inline-block;
     background: #F5F5F5;
@@ -97,18 +53,18 @@
     border: 1px solid #ececec;
 }
 
-.btnn-header {
-    height: 40px;
-    line-height: 0px;
-    padding-right: 2.5rem;
-    width: 62px;
+.btn-header {
+    height: 105%;
+    width: 7%;
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-size: 18px;
     color: #fff;
     background: #333333;
     position: absolute;
-    /* right: -2px; */
-    /* top: -1px; */
+    right: -2px; 
+    top: -1px;
     border: none;
     border-radius: 0 5px 5px 0;
     -webkit-transition: all 0.4s ease;
@@ -121,37 +77,46 @@
 }
 
 .right-bar {
-    display: inline-block;
-    padding: 0;
+    padding: 0 5% 0 0;
     margin: 0;
-    top: 6px;
+    top: 10px;
     float: right;
-    position: relative;
-}
-
-.sinlge-bar {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative; 
 }
 
 .single-icon {
     color: #333;
     font-size: 20px;
     position: relative;
+    display: inline-block;
+}
+
+.single-icon img {
+    width: 60px; 
+    position: relative;
+    top: auto; 
 }
 
 .total-count {
     position: absolute;
-    top: -7px;
-    right: -8px;
+    top: 25%; /* Adjust this to move the count to desired position */
+    left: 60%; /* Adjust this to move the count to desired position */
+    transform: translate(-50%, -50%); /* Keep the centering */
     background: #f6931d;
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
-    text-align: center;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     border-radius: 100%;
     font-size: 11px;
 }
+
+
 
 .middle-inner {
     padding: 47px 0;
@@ -184,12 +149,53 @@
 
 
 
-@media (max-width: 1045px) {
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container-header .row {
+      flex-direction: column;
+      text-align: center; /* Center items on smaller screens */
+    }
+  
+    .col-lg-2, .col-lg-8, .col-md-7, .col-md-3 {
+      width: 100%; /* Ensure each column takes full width on small screens */
+    }
+  
+    .search-bar-top {
+      padding: 0 10px;
+    }
+  
     .right-bar {
-      display:none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px; /* Add space between sections on smaller screens */
+    }
+  
+    .right-bar img {
+      width: 35px; /* Smaller cart icon for mobile */
+    }
+  
+    .total-count {
+      top: -5px;
+      right: -10px;
+      width: 15px;
+      height: 15px;
+      font-size: 10px;
     }
   }
-
+  
+  @media (max-width: 576px) {
+    .logo img {
+      display: none;
+    }
+  
+    .right-bar img {
+      width: 30px; /* Smaller cart icon on very small screens */
+    }
+  
+    .search-bar input {
+      padding: 5px; /* Reduce padding inside the search bar */
+    }
+  }
 
 
 

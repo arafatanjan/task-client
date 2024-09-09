@@ -56,17 +56,17 @@ const Liveshopping = () => {
       <div
         className=""
         style={{
-          marginLeft: '0px',
+          marginLeft: '1%',
           width: '15%',
           marginTop: 0,
           display: 'inline-block',
         }}
       >
-        <span className="" style={{ height: '65px' }}>
+        <span className="" style={{ height: '100%' }}>
           <img
             src="https://static.ajkerdeal.com/images/livevideode/logo.svg"
             alt="Logo"
-            style={{ width: '100%' }} // Ensure the image scales with its container
+            style={{ width: '90%' }} // Ensure the image scales with its container
           />
         </span>
       </div>
@@ -78,7 +78,7 @@ const Liveshopping = () => {
   
         <div
           className="col-lg-2 col-md-3 col-sm-4 col-6"
-          style={{ width: "70%", paddingTop: "1rem" }}
+          style={{ width: "70%", paddingTop: "1%" }}
         >
           <div className="row">
             {videoCards.map((card) => (
@@ -134,7 +134,7 @@ const Liveshopping = () => {
                       color: "white",
                       fontSize: 11,
                       marginTop: -34,
-                      width: "10.2rem",
+                      width: "85%",
                       height: 24,
                     }}
                   >
