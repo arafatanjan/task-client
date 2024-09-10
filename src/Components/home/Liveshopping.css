@@ -1,38 +1,42 @@
-
-.containerlive {
+/* .containerlive {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
     
-}
+} */
 
 .responsiveContainer {
-    
-        /* margin-left: auto,  */
-         margin:0 0 0 8%; 
-        margin-right: auto;
-        /* padding: 0 1rem */
+  margin: 0 0 0 10%;
+  
+  width: 15%;
+  margin-top: 0;
+  display: inline-block;
 }
 
+.liveShoppingVideoForAjkerDeal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: auto;
+  
+}
 
-.liveShoppingVideoForAjkerDeal{
+.liveShoppingcard{
+    height: 100%; /* This makes the row take the height of the parent */
     display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
     
-    margin:auto auto;
-    padding: auto auto;
+    padding-top: 1%;
 }
 
-
-
-.containerlive {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-    
-}
+/* .containerlive {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+} */
 
 /* hot-deal-logo {
     display: 'block';
@@ -41,67 +45,65 @@
     margin-left: -32px;
 } */
 
-
 .label_live {
-    display: inline;
-    font-weight: bold;
-    line-height: 1;
-    /* color: #fff; */
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25em;
-    padding-top: auto;
-    padding-right: auto;
-    padding-bottom: auto;
-    padding-left: auto;
-    color: white;
-    font-size: 15px;
-    position: absolute;
-    /* left: 20px; */
-    border-bottom-left-radius: 16px;
-    width: 45%;
-    margin-top: 8px;
-    /* margin-left: 8px; */
-    overflow: "hidden";
-    position: absolute;
+  display: inline;
+  font-weight: bold;
+  line-height: 1;
+  /* color: #fff; */
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+  padding-top: auto;
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-left: auto;
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  /* left: 20px; */
+  border-bottom-left-radius: 16px;
+  width: 45%;
+  margin-top: 8px;
+  /* margin-left: 8px; */
+  overflow: "hidden";
+  position: absolute;
 }
 
 .span-Live-Shoppng {
-    background: #241f1d;
-    margin: 10px 59px;
-    height: 7%;
-    font-weight: 100;
-    display: flex;
-    position: absolute;
-    font-size: 15px;
-    width: 40%;
-    margin-left: 45%;
-    overflow: "hidden";
-    position: absolute;
+  background: #241f1d;
+  margin: 10px 59px;
+  height: 7%;
+  font-weight: 100;
+  display: flex;
+  position: absolute;
+  font-size: 15px;
+  width: 40%;
+  margin-left: 45%;
+  overflow: "hidden";
+  position: absolute;
 }
 
 .playn {
-    display: flex;
-    position: absolute;
-    margin-left: 5rem;
-    margin-top: 6rem;
-    
+  display: flex;
+  position: absolute;
+  margin-left: 5rem;
+  margin-top: 6rem;
 }
 
 /*Winter Scroll*/
 #moretoright {
-    right: 0;
-    z-index: 1;
+  right: 0;
+  z-index: 1;
 }
 
 @media (max-width: 868px) {
-    .responsiveContainer {
-      margin-left: 0;
-      width: 100%;
-    }
-  
-    .responsiveLogo {
-      width: 50%; /* Adjust the width as needed for smaller screens */
-    }
+  .responsiveContainer {
+    margin-left: 0;
+    width: 66%;
   }
+
+  .responsiveLogo {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+  }
+}

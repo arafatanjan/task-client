@@ -55,89 +55,51 @@ const Products = ({}) => {
   };
 
   const ShowProducts = () => {
+    const categories = [
+      'T-Shirts',
+      'Pants',
+      'Shirts',
+      'Salwar',
+      'Kurti',
+      'Watches',
+      'Polo',
+      'Sharee',
+      'Panjabi',
+      'Shoes'
+      
+    ];
 
     return (
-      <div>
-        <div className="container-fluid">
-          <div className="buttons d-flex justify-content-center pb-3">
-            <button
-              className="tile_div"
-              // onClick={() => setFilter(data)}
-              onClick={() => filterProduct("tshirt")}
-            >
-              T-Shirts
-            </button>
-            {/* <button type="button" className="min-h-1 px-3 py-0 text-xs font-small text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Extra small</button> */}
-            <button
-              className="tile_div "
-              onClick={() => filterProduct("Pants")}
-            >
-              Pants
-            </button>
-            <button
-              className="tile_div "
-              onClick={() => filterProduct("Shirts")}
-            >
-              Shirts
-            </button>
-            <button
-              className="tile_div"
-              onClick={() => filterProduct("Salwar")}
-            >
-              Salwar Kameez
-            </button>
-            <button
-              className="tile_div"
-              onClick={() => filterProduct("Kurti")}
-            >
-              Kurti
-            </button>
-            <button
-              className="tile_div"
-              onClick={() => filterProduct("Watches")}
-            >
-              Watches
-            </button>
-            <button
-              className="tile_div "
-              onClick={() => filterProduct("Polo")}
-            >
-              Polo Shirts
-            </button>
-            <button
-              className="tile_div "
-              onClick={() => filterProduct("Sharee")}
-            >
-              Sharee
-            </button>
-            <button
-              className="tile_div "
-              onClick={() => filterProduct("Panjabi")}
-            >
-              Panjabi
-            </button>
-            <button
-              className="tile_div"
-              onClick={() => filterProduct("Shoes")}
-            >
-              Shoes
-            </button>
+      
+        <> 
+          <div className=" buttons d-flex justify-content-center pb-3">
+            
+              {/* onClick={() => setFilter(data)} */}
+              {categories.map((category, index) => (
+                
+                <button key={index} className="tile_div">{category}</button>
+              ))}
           </div>
          
+          <div className="scroll-bar">
+        {/* Scrollbar (Styled using CSS) */}
+      </div>
 
-          <div className="row">
-            <div className="col-md-6 ">
-              <div className="row">
+      
+          <div className="row firsthalf">
+
+            <div className="col-md-6 col-sm-6 col-6 ">
+              <div className="row ">
                 {filter.slice(0, 4).map((product) => {
                   return (
                     <>
-                      <div className="col-md-3 px-1">
-                        <div className="border h-100 text-center" key={product._id}>
+                      <div className="col-lg-3 px-1 ">
+                        <div className="border  text-center" key={product._id}>
                           <img
                             src={product.filename}
-                            className="card-img-top"
+                            className="card-img-left"
                             alt={product.title}
-                            height="124px"
+                            height=""
                           />
                           <div className="card-body">
                             <p className="discounted-price">
@@ -155,18 +117,18 @@ const Products = ({}) => {
               </div>
             </div>
 
-            <div className="col-md-6 ">
+            <div className="col-md-6 col-sm-6 col-6">
               <div className="row">
                 {filter.slice(4, 8).map((product) => {
                   return (
                     <>
-                      <div className="col-md-3">
-                        <div class="border h-100 text-center" key={product._id}>
+                      <div className="col-lg-3 px-1 ">
+                        <div class="border text-center" key={product._id}>
                           <img
                             src={product.filename}
-                            className="card-img-top"
+                            className="card-img-right"
                             alt={product.title}
-                            height="124px"
+                            height=""
                           />
                           <div className="card-body">
                             <p className="discounted-price">
@@ -184,31 +146,36 @@ const Products = ({}) => {
               </div>
             </div>
           </div>
-        </div>  
-      </div>
+        </>  
+     
     );
   };
 
+
   return (
-    <div className="d-flex justify-content-center">
-    <div className="" style={{ marginTop: "20px",marginBottom: "4rem", minWidth:'1250px', padding:'0 10%' }}>
-      <div className="row" style={{ marginBottom: "1rem"}}>
-        <div>
-          <div>
+    //Starting
+    <div className="product-container" style={{ marginTop: "20px",marginBottom: "4rem", padding:'0 7% 0 0' }}>
+
+    <div className="">
+
+      <div className=" logoarrow">
+        
+          <div className="" >
             <div className="deals-title">
-              <span className="hot-deal-logo" style={{ height: '50px' }}>
-                <img className="img" src={aru} alt="" />
+              <span className="hot-deal-logo float-right" >
+                <img className="img" src={aru} alt="logo" />
               </span>
+            </div>
             </div>
 
             <div
-            className="d-flex justify-content-end"
+            className=""
               style={{
                 float: "right",
                 marginTop: 20,
                 fontSize: 16,
                 textAlign: "right",
-                borderBottom: "darkorange",
+                borderBottom: "blue",
               }}
               
             >
@@ -223,6 +190,7 @@ const Products = ({}) => {
                     width: 15,
                     display: "inline-block",
                     overflow: "hidden",
+                    borderBottom: "",
                   }}
                   className="all-arrow"
                 >
@@ -232,6 +200,7 @@ const Products = ({}) => {
                       width: "100%",
                       marginTop: "-3.5%",
                       display: "inline-block",
+                      borderBottom: "",
                     }}
                     src="https://static.ajkerdeal.com/images/desktop-home/arrowforall.svg"
                     alt=""
@@ -239,11 +208,11 @@ const Products = ({}) => {
                 </span>
               </a>
             </div>
-          </div>
+          
         </div>
-      </div>
+      
 
-      <div className="row justify-content-center">
+      <div className="row justify-content-center mb-3" style={{ padding:'0 5% 0 12%' }}>
         {loading ? <Loading /> : <ShowProducts />}
       </div>
     </div>

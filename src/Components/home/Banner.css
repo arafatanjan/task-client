@@ -73,9 +73,10 @@
   }
   
 
-  @media (max-width: 868px) {
+  @media (max-width: 928px) {
     .sidebar {
-      display:none;
+      display:hidden;
+      background-color: #576BB2;
     } 
   }
   
