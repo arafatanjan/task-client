@@ -47,8 +47,7 @@ font-family: "Poppins", sans-serif;
 .all-arrow {
   float: right;
   width: 7;
-  /* margin-top: -3px; */
-  /* margin-right: 10px; */
+  
 }
 
 .deals-title {
@@ -118,7 +117,7 @@ span.hot-deal-logo {
   font-weight: 600;
   font-size: 14px;
   display: inline-block;
-  float: left;
+  /* float: left; */
   margin-top: 10px;
 }
 

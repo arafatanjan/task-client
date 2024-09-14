@@ -30,6 +30,7 @@ const Products = ({}) => {
   }, []);
 
   const Loading = () => {
+    
     return (
       <>
         <div className="col-md-3">
@@ -48,15 +49,15 @@ const Products = ({}) => {
     );
   };
 
-  const filterProduct = (cat) => {
-    const updatedList = data.filter((x) => x.type === cat);
+  const filterProduct = (category) => {
+    const updatedList = data.filter((x) => x.type === category);
     setFilter(updatedList);
     
   };
 
   const ShowProducts = () => {
     const categories = [
-      'T-Shirts',
+      'Tshirt',
       'Pants',
       'Shirts',
       'Salwar',
@@ -77,7 +78,7 @@ const Products = ({}) => {
               {/* onClick={() => setFilter(data)} */}
               {categories.map((category, index) => (
                 
-                <button key={index} className="tile_div">{category}</button>
+                <button key={index} className="tile_div" onClick={() => filterProduct(category)}>{category}</button>
               ))}
           </div>
          

@@ -18,15 +18,15 @@ const Registration = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const confirm_password = form.confirm_password.value;
+    // const confirm_password = form.confirm_password.value;
 
-    if (password !== confirm_password) {
-      setPassMatch(false);
-    }
+    // if (password !== confirm_password) {
+    //   setPassMatch(false);
+    // }
 
-    console.log(email, password, confirm_password);
+    console.log(email, password);
 
-    if (password === confirm_password) {
+    
       createUser(email, password).then((data) => {
         if (data?.user?.email) {
           const userInfo = {
@@ -48,7 +48,7 @@ const Registration = () => {
       if (user) {
         navigate(from);
       }
-    }
+    
   };
 
   return (
@@ -100,23 +100,7 @@ const Registration = () => {
                 required
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Confirm Password</span>
-              </label>
-              <input
-                type="password"
-                placeholder="confirm password"
-                className="input input-bordered"
-                name="confirm_password"
-                required
-              />
-            </div>
-            {!passMatch && (
-              <div className="my-2">
-                <p className="text-red-500">Passwords do not match!</p>
-              </div>
-            )}
+          
             <div className="form-control mt-6">
               <input
                 className="btn bg-red-500 text-white"
@@ -124,6 +108,7 @@ const Registration = () => {
                 value="Register"
               />
             </div>
+            
             <div className="mt-6">
               <GoogleLogin />
             </div>
