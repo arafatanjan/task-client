@@ -1,4 +1,11 @@
 /* Basic form styling */
+.complain-header {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  margin-bottom: 14%;
+}
+
 .form {
     max-width: 600px;
     margin: 0 ;

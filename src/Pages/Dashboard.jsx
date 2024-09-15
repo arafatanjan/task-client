@@ -27,17 +27,17 @@ useEffect(() => {
     .then((data) => setTotaluserInfo(data));
 }, [user]);
 
-//console.log(courseData);
+console.log(courseData);
 
 return (
   <div className="min-h-screen bg-gray-100">
-      <div className="dashboard flex flex-col items-center justify-center py-10">
-        <div className="flex flex-col md:flex-row gap-6 w-full max-w-4xl px-4">
-          {/* User Info Card */}
-          <div className="card w-full md:w-1/2 bg-white shadow-xl rounded-lg p-6">
-            <h1 className="text-3xl font-bold text-center mb-4">Welcome to Your Dashboard</h1>
-            <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
-              <img src={user?.photoURL || "/placeholder.jpg"} alt="User profile" className="w-full h-full object-cover" />
+      <div className="dashboard flex flex-col items-center justify-center py-1">
+        <div className="flex flex-col md:flex-row gap-2 w-full max-w-4xl px-4 justify-evenly">
+          
+          <div className="card w-full md:w-1/3 h-auto bg-white shadow-xl rounded-lg p-6">
+            <h1 className="text-xl font-bold text-center mb-4">Welcome to Your Dashboard</h1>
+            <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-4">
+              <img src={user?.photoURL || "/placeholder.jpg"} alt="profile picture" className="w-full h-full object-cover" />
             </div>
             <div className="text-center">
               <p className="text-xl mb-2">
@@ -55,11 +55,11 @@ return (
           </div>
 
           {/* Course Info Card */}
-          <div className="card w-full md:w-1/2 bg-gradient-to-r from-white to-gray-200 shadow-2xl rounded-lg p-6 flex flex-col justify-center">
-            <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
-              Courses Available: <span className="text-blue-600">{courseData?.length}</span>
+          <div className="card w-full md:w-1/3 h-auto bg-gradient-to-r from-white to-gray-200 shadow-2xl rounded-lg p-6 flex flex-col justify-center">
+            <h1 className="text-xl font-bold text-center text-gray-800 mb-4">
+              Products Available: <span className="text-blue-600">{courseData?.length}</span>
             </h1>
-            <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
+            <h1 className="text-xl font-bold text-center text-gray-800 mb-4">
               Total Users: <span className="text-green-600">{totaluserInfo?.length}</span>
             </h1>
           </div>
@@ -67,14 +67,14 @@ return (
 
         {/* Bar Chart */}
         <div className="w-full max-w-4xl px-4 mt-10">
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer width="80%" height={200}>
             <BarChart data={courseData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="title" />
+              <XAxis dataKey="title" tickFormatter={(title) => title.slice(0, 6)} />
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="price" fill="#8884d8" barSize={40} />
+              <Bar dataKey="price" fill="#8884d8" barSize={20} />
             </BarChart>
           </ResponsiveContainer>
         </div>

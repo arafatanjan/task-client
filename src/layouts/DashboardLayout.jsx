@@ -15,17 +15,24 @@ const DashboardLayout = () => {
       <div className={`bg-gray-800 text-white md:w-64 w-full ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
         <div className="p-6 text-lg font-bold border-b border-gray-700">Menu</div>
         <ul className="flex flex-col p-4">
-          <li className="mb-4">
-            <Link to={"/dashboard"} className="block p-4 bg-gray-700 rounded hover:bg-gray-600">Dashboard</Link>
+        <li className="mb-2">
+            <Link to={"/"} className="block p-2 bg-gray-700 rounded hover:bg-gray-600 d-flex justify-content-center">
+            <div className="d-flex justify-content-center" style={{ maxWidth:"70px"}}>
+            <img
+              src="https://static.ajkerdeal.com/images/login_files/ad_logo.png"
+              alt="AjkerDeal Logo"
+            />
+          </div>
+          </Link>
           </li>
-          <li className="mb-4">
-            <Link to={"all-products"} className="block p-4 bg-gray-700 rounded hover:bg-gray-600">All Products</Link>
+          <li className="mb-2">
+            <Link to={"all-products"} className="block p-2 bg-gray-700 rounded hover:bg-gray-600 d-flex justify-content-center">All Products</Link>
           </li>
-          <li className="mb-4">
-            <Link to={"add-products"} className="block p-4 bg-gray-700 rounded hover:bg-gray-600">Add Product</Link>
-          </li>
-          <li className="mb-4">
-            <Link to={"/"} className="block p-4 bg-gray-700 rounded hover:bg-gray-600">Home</Link>
+          <li className="mb-2">
+            <Link to={"add-products"} className="block p-2 bg-gray-700 rounded hover:bg-gray-600 d-flex justify-content-center">Add Product</Link>
+          </li>        
+          <li className="mb-2">
+            <Link to={"/dashboard"} className="block p-2 bg-gray-700 rounded hover:bg-gray-600 d-flex justify-content-center">Dashboard</Link>
           </li>
         </ul>
       </div>

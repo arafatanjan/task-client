@@ -13,54 +13,56 @@ const Complain = () => {
       };
 
     return (
-        <div style={{ margin: '100px 300px', border: '1px solid black', padding: '30px 40px' }}>
+      <div style={{display: 'flex', justifyContent:'center', margin:'10% 0', backgroundColor:"#aaa9a9"}}>
+        <div style={{ margin: '0 0%', border: '1px solid black', padding: '0 18%' , width:'60%'}}>
+          <div className='complain-header'>মতামত/অভিযোগ</div>
       <form onSubmit={handleSubmit} className="product-form">
       <div className="form-group">
-        <label htmlFor="title">Product Title</label>
+        {/* <label htmlFor="title">Product Title</label> */}
         <input
           type="text"
           id="title"
           name="title"
           className="form-control"
-          placeholder="Enter product title"
+          placeholder="বুকিং কোড"
           required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="stock">Stock</label>
+        {/* <label htmlFor="stock">Stock</label> */}
         <input
-          type="number"
+          type="text"
           id="stock"
           name="stock"
           className="form-control"
-          placeholder="Enter stock quantity"
+          placeholder="নাম"
           required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="price">Price ($)</label>
+        {/* <label htmlFor="price">Price ($)</label> */}
         <input
-          type="number"
+          type="text"
           step="0.01"
           id="price"
           name="price"
           className="form-control"
-          placeholder="Enter price"
+          placeholder="ফোন নাম্বার"
           required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="discount">Discount (%)</label>
+        {/* <label htmlFor="discount">Discount (%)</label> */}
         <input
-          type="number"
+          type="text"
           step="0.01"
           id="discount"
           name="discount"
           className="form-control"
-          placeholder="Enter discount"
+          placeholder="মতামত/অভিযোগ"
           required
         />
       </div>
@@ -70,7 +72,7 @@ const Complain = () => {
       <button type="submit" className="btn btn-primary">Submit</button>
     </form>
       </div>
-     
+      </div>
     );
 };
 

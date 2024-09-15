@@ -19,7 +19,7 @@ const NavbarPage = () => {
 
 <div className="topbar" style={{ paddingTop:".5%"}}>
  
-<ul className="nav" style={{color: 'white', marginBottom: '100px'}}>
+<ul className="nav" style={{color: 'white', marginBottom: ''}}>
       <li class="nav-item">
       <Link class="nav" to={"/merchantcorner"}>Merchant Corner</Link>
       </li>
@@ -38,7 +38,9 @@ const NavbarPage = () => {
           </>
         )}
         {user && (
+          <div style={{ backgroundColor: 'blue' }} className="overflow-hidden mr-2 pl-2 px-auto h-6 flex justify-center">
           <li><Link to={"/dashboard"}>Dashboard</Link></li>
+          </div>
         )}
       
      
@@ -56,7 +58,7 @@ const NavbarPage = () => {
          <img src={user?.photoURL || "/placeholder.jpg"} alt="User Avatar" className="w-full h-full object-cover" />
        </div>
        <div>
-       <button onClick={handleLogout} className="btn bg-red-500 text-white btn-xs" style={{height: '00%'}}>Logout</button>
+       <button onClick={handleLogout} className="btn bg-red-500 text-white btn-xs pb-2" style={{height: '00%'}}>Logout</button>
      </div>
      </div>
      )}

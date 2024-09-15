@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MerchantCorner.css";
 import adLogo from "../../src/assets/ad-logo.png";
 import GoogleLogin from "../Components/Login-Registration/GoogleLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const MerchantCorner = () => {
   const [passMatch, setPassMatch] = useState(true);
   const [isRegister, setIsRegister] = useState(true);
-  const { createUser, user } = useAuth();
+  const { createUser, signIn, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -74,11 +77,47 @@ const MerchantCorner = () => {
     setIsRegister(!isRegister); // Toggle between register and login
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-  };
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
 
+    //console.log(email, password);
+
+    try {
+      const res = await signIn(email, password); // Assuming signIn is a function that returns a promise
+      console.log(res);
+      if (res && res.user) {
+       
+        navigate('/dashboard');
+      } else {
+        
+        console.log('Login failed');
+      }
+    } catch (error) {
+    
+      console.error('Error during sign in', error);
+    };
+  
+
+
+    // await signIn(email, password)
+    // .then(result=>{
+    //    const loggedinuser= result.user;
+    //    console.log(loggedinuser)
+    //    const user= {email};
+
+    //   axios.post('https://task-server-fawn.vercel.app/jwt', user, {withCredentials: true})
+    //   .then(res=> {
+    //     console.log(res.data)
+        //  if (res.data.success){
+        //    navigate('/dashboard')
+        //  }
+
+    //   })
+    // })
+  };
 
   return (
     <div className="container-MerchantCorner">
@@ -92,98 +131,102 @@ const MerchantCorner = () => {
           </div>
           <div className="contact-number">+88-01850000999</div>
         </div>
-        
-        <div className="registration-form">
-      <div className="login-title-wrap-merchant">
-        {isRegister ? 'রেজিস্ট্রেশন' : 'লগইন'}
-      </div>
-      
-      {isRegister ? (
-        <form onSubmit={handleSubmit}>
-          <div className="merchantCornerform">
-            <input
-              style={{ margin: "1rem 0" }}
-              type="name"
-              placeholder="আপনার নাম"
-              name="name"
-              required
-            />
-            <input
-              style={{ margin: "1rem 0" }}
-              type="email"
-              placeholder="আপনার ইমেইল এড্রেস লিখুন"
-              name="email"
-              required
-            />
-            <input
-              style={{ margin: "1rem 0" }}
-              type="password"
-              placeholder="আপনার পাসওয়ার্ড দিন"
-              name="password"
-              required
-            />
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div className="registration-form">
+          <div className="login-title-wrap-merchant">
+            {isRegister ? "রেজিস্ট্রেশন" : "লগইন"}
+          </div>
+          {isRegister ? (
+            <form onSubmit={handleSubmit}>
+              <div className="merchantCornerform">
+                <input
+                  style={{ margin: "1rem 0" }}
+                  type="name"
+                  placeholder="আপনার নাম"
+                  name="name"
+                  required
+                />
+                <input
+                  style={{ margin: "1rem 0" }}
+                  type="email"
+                  placeholder="আপনার ইমেইল এড্রেস লিখুন"
+                  name="email"
+                  required
+                />
+                <input
+                  style={{ margin: "1rem 0" }}
+                  type="password"
+                  placeholder="আপনার পাসওয়ার্ড দিন"
+                  name="password"
+                  required
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <button
+                    style={{ backgroundColor: "#599CD3", color: "white" }}
+                    type="submit"
+                  >
+                    রেজিস্ট্রেশন করুন
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleToggleForm}
+                    style={{ color: "#599CD3" }}
+                  >
+                    {isRegister ? "লগইন করুন" : "রেজিস্ট্রেশন করুন"}
+                  </button>
+                </div>
+              </div>
+            </form>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <div className="merchantCornerform">
+              <input
+                style={{ margin: "1rem 0" }}
+                type="email"
+                placeholder="আপনার ইমেইল এড্রেস লিখুন"
+                name="email"
+                required
+              />
+              <input
+                style={{ margin: "1rem 0" }}
+                type="password"
+                placeholder="আপনার পাসওয়ার্ড দিন"
+                 name="password"
+                required
+              />
+              <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
               <button
                 style={{ backgroundColor: "#599CD3", color: "white" }}
                 type="submit"
               >
-                রেজিস্ট্রেশন করুন
+                লগইন করুন
               </button>
-
-              {/* <button
+              <button
                 type="button"
                 onClick={handleToggleForm}
                 style={{ color: "#599CD3" }}
               >
-                লগইন করুন
-              </button> */}
-              <button 
-       type="button"
-       onClick={handleToggleForm}
-       style={{ color: "#599CD3" }}
-      >
-        {isRegister ? 'লগইন করুন' : 'রেজিস্ট্রেশন করুন'}
-      </button>
-            </div>
-          </div>
-        </form>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            style={{ margin: "1rem 0" }}
-            type="email"
-            placeholder="আপনার ইমেইল এড্রেস লিখুন"
-            required
-          />
-          <input
-            style={{ margin: "1rem 0" }}
-            type="password"
-            placeholder="আপনার পাসওয়ার্ড দিন"
-            required
-          />
-          <button
-            style={{ backgroundColor: "#599CD3", color: "white" }}
-            type="submit"
-          >
-            লগইন করুন
-          </button>
+                {isRegister ? "লগইন করুন" : "রেজিস্ট্রেশন করুন"}
+              </button>
+              </div>
+              </div>
+            </form>
+          )}
+        </div>
 
-          <button 
-       type="button"
-       onClick={handleToggleForm}
-       style={{ color: "#599CD3" }}
-      >
-        {isRegister ? 'লগইন করুন' : 'রেজিস্ট্রেশন করুন'}
-      </button>
-        </form>
-      )}
-
-   
-    </div>
- 
-
-  
         <div className="">
           <div className="footer">
             <img
