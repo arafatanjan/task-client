@@ -34,8 +34,8 @@
         "id": "p-2"
     },
     {
-        "title": "",
-        "type": "",
+        "title": "Tshirt",
+        "type": "Tshirt",
         "description": "Asparagus with ham on the wooden table",
         "filename": "https://static.ajkerdeal.com/images/deals/414012206164848/1_t-shirt-for-man.webp",
         "discountedprice": 450,
@@ -749,5 +749,82 @@
         "price": 500,
         "rating": 4,
         "id": "p-61"
+    },
+    {
+        "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/877612607014735/1_stylist-polo-shirt.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-62"
+    },
+    {
+        "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/877612607014859/1_stylist-polo-shirt.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-63"
+    },
+    {
+      "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/877612508205816/1_polo-shirt-for-men.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-64"
+    },
+    {
+       "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/436071106000508/1_cotton-polo-t-shirt-for-men-2-pcs-combo.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-65"
+    },
+    {
+       "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/722822710090018/1_mens-short-sleeve-polo-shirt.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-66"
+    },
+    {
+       "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/722822710091100/1_mens-short-sleeve-polo-shirt.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-67"
+    },
+    {
+        "title": "Polo",
+        "type": "Polo",
+        "description": "Sweet fresh stawberry on the wooden table",
+        "filename": "https://static.ajkerdeal.com/images/deals/877612602232258/1_polo-t-shirt.webp",
+        "discountedprice": 450,
+        "width": 299,
+        "price": 500,
+        "rating": 4,
+        "id": "p-68"
     }
 ]

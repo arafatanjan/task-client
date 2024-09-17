@@ -8,7 +8,7 @@ import aru from "./../../assets/hot-deal-logo.gif";
 
 const Products = ({}) => {
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
+  const [filterproduct, setFilterproduct] = useState(data);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
@@ -17,10 +17,10 @@ const Products = ({}) => {
       setLoading(true);
       const response = await fetch("services.json");
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+         setData(await response.clone().json());
+         setFilterproduct(await response.json());
         setLoading(false);
-        console.log(filter);
+        console.log(filterproduct);
       }
       return () => {
         componentMounted = false;
@@ -49,9 +49,9 @@ const Products = ({}) => {
     );
   };
 
-  const filterProduct = (category) => {
+  const newFilterProduct = (category) => {
     const updatedList = data.filter((x) => x.type === category);
-    setFilter(updatedList);
+    setFilterproduct(updatedList);
     
   };
 
@@ -67,18 +67,17 @@ const Products = ({}) => {
       'Sharee',
       'Panjabi',
       'Shoes'
-      
-    ];
+      ];
 
     return (
       
         <> 
           <div className=" buttons d-flex justify-content-center pb-3">
             
-              {/* onClick={() => setFilter(data)} */}
+              {/* onClick={() => setFilterproduct(data)} */}
               {categories.map((category, index) => (
                 
-                <button key={index} className="tile_div" onClick={() => filterProduct(category)}>{category}</button>
+                <button key={index} className="tile_div" onClick={() => newFilterProduct(category)}>{category}</button>
               ))}
           </div>
          
@@ -91,17 +90,19 @@ const Products = ({}) => {
 
             <div className="col-md-6 col-sm-6 col-6 ">
               <div className="row ">
-                {filter.slice(0, 4).map((product) => {
+                {filterproduct.slice(0, 4).map((product) => {
                   return (
                     <>
                       <div className="col-lg-3 px-1 ">
                         <div className="border  text-center" key={product._id}>
+                          <Link to={`/product/${product.id}`}> 
                           <img
                             src={product.filename}
                             className="card-img-left"
                             alt={product.title}
                             height=""
                           />
+                          </Link>
                           <div className="card-body">
                             <p className="discounted-price">
                               <span>{product.discountedprice}</span>
@@ -120,17 +121,19 @@ const Products = ({}) => {
 
             <div className="col-md-6 col-sm-6 col-6">
               <div className="row">
-                {filter.slice(4, 8).map((product) => {
+                {filterproduct.slice(4, 8).map((product) => {
                   return (
                     <>
                       <div className="col-lg-3 px-1 ">
-                        <div class="border text-center" key={product._id}>
+                        <div className="border text-center" key={product._id}>
+                        <Link to={`/product/${product.id}`}> 
                           <img
                             src={product.filename}
                             className="card-img-right"
                             alt={product.title}
                             height=""
                           />
+                          </Link>
                           <div className="card-body">
                             <p className="discounted-price">
                               <span>{product.discountedprice}</span>

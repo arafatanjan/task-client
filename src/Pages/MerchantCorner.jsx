@@ -123,12 +123,14 @@ const MerchantCorner = () => {
     <div className="container-MerchantCorner">
       <div className="background-image">
         <div className="header-MerchantCorner">
+        <Link to={"/"} className="block ">
           <div className="merchantCornerlogo ">
             <img
               src="https://static.ajkerdeal.com/images/login_files/ad_logo.png"
               alt="AjkerDeal Logo"
             />
           </div>
+          </Link>
           <div className="contact-number">+88-01850000999</div>
         </div>
 

@@ -8,12 +8,12 @@ import useAuth from "../../Hooks/useAuth";
 const SingleProductCardDashboard = ({ course, onDelete }) => {
   const { _id, title, brand, price, stock, description, image_url, email } = course;
   const { user } = useAuth();
-  console.log(user.email)
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const token = localStorage.getItem("token");
 
-
+// console.log(user.email)
+// console.log(email)
 
 const handleDelete = async () => {
   const token = localStorage.getItem("token");
@@ -82,12 +82,8 @@ const handleDelete = async () => {
           <button className="btn bg-indigo-500 text-white flex items-center space-x-2">
             <Link to={`/products/${_id}`}>Buy Now</Link>
           </button>
-          {/* <button className="btn bg-green-600 text-white">
-      <Link to={`edit/${_id}`} className="text-white">Edit</Link>
-    </button>
-    <button onClick={handleDelete} className="btn bg-red-500 text-white">
-      Delete
-    </button> */}
+
+    
           {user.email === email ? (
   <>
     <button className="btn bg-green-600 text-white">

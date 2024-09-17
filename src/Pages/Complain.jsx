@@ -1,5 +1,6 @@
 import React from 'react';
 import './Complain.css'
+import Header from "../Components/home/Header"
 
 const Complain = () => {
 
@@ -13,9 +14,12 @@ const Complain = () => {
       };
 
     return (
-      <div style={{display: 'flex', justifyContent:'center', margin:'10% 0', backgroundColor:"#aaa9a9"}}>
-        <div style={{ margin: '0 0%', border: '1px solid black', padding: '0 18%' , width:'60%'}}>
+      <div>
+        <Header/>
+      <div style={{display: 'flex', justifyContent:'center', margin:'0 0 10% 0', backgroundColor:"#f2f2f2"}}>
+        <div style={{ margin: '5% 0%', boxShadow: '0 0 5px #aaaaaa', padding: '0 18%' , width:'60%', backgroundColor:"white"}}>
           <div className='complain-header'>মতামত/অভিযোগ</div>
+          <div >
       <form onSubmit={handleSubmit} className="product-form">
       <div className="form-group">
         {/* <label htmlFor="title">Product Title</label> */}
@@ -67,10 +71,13 @@ const Complain = () => {
         />
       </div>
 
-      <input type="hidden" id="email" name="email" value="your-email@example.com" />
-
-      <button type="submit" className="btn btn-primary">Submit</button>
+      {/* <input type="hidden" id="email" name="email" value="your-email@example.com" /> */}
+<div className='d-flex justify-content-center mb-5 '>
+      <button type="submit" className="" style={{backgroundColor:"#24b29c"}}>সেভ করুন</button>
+      </div>
     </form>
+    </div>
+      </div>
       </div>
       </div>
     );

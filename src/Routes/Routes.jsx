@@ -17,7 +17,8 @@ import PaymentSuccess from "../Pages/PaymentSuccess";
 import PaymentFail from "../Pages/PaymentFail";
 import MerchantCorner from "../Pages/MerchantCorner";
 import Complain from "../Pages/Complain";
-// import Alumni from "../Pages/Alumni";
+import PurchaseDetails from "../Pages/PurchaseDetails";
+// import Alumni from "../../public/services.json"
 
 
 export const router = createBrowserRouter([
@@ -36,6 +37,15 @@ export const router = createBrowserRouter([
           element: <ProductDetails />,
           loader: ({ params }) =>
             fetch(`https://task-server-fawn.vercel.app/courses/${params.id}`),
+        },
+        {
+          path: "/product/:id",
+          element: <PurchaseDetails />,
+          loader: async ({ params }) => {
+            const response = await fetch('/services.json');  // Fetch the entire file
+            const data = await response.json();             // Parse the JSON file
+            return data.find(service => service.id === params.id);  // Find the product with matching id
+          }
         },
         {
           path: "/merchantcorner",

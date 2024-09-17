@@ -20,14 +20,14 @@ const NavbarPage = () => {
 <div className="topbar" style={{ paddingTop:".5%"}}>
  
 <ul className="nav" style={{color: 'white', marginBottom: ''}}>
-      <li class="nav-item">
-      <Link class="nav" to={"/merchantcorner"}>Merchant Corner</Link>
+      <li className="nav-item">
+      <Link className="nav" to={"/merchantcorner"}>Merchant Corner</Link>
       </li>
-      <li class="nav-item">     
-      <Link class="nav" to={"/complain"}>Complain & Suggestion</Link>
+      <li className="nav-item">     
+      <Link className="nav" to={"/complain"}>Complain & Suggestion</Link>
       </li>
-      <li class="nav">
-          <a class="nav" href="">Track Order</a>
+      <li className="nav">
+          <a className="nav" href="">Track Order</a>
       </li>
       
 
@@ -45,11 +45,11 @@ const NavbarPage = () => {
       
      
 
-      <li class="nav-item">
-          <a class="nav" href="">বাংলা</a>
+      <li className="nav-item">
+          <a className="nav" href="">বাংলা</a>
       </li>
-      <li class="nav-item">
-          <a class="nav" href="">ENG</a>
+      <li className="nav-item">
+          <a className="nav" href="">ENG</a>
       </li>
       {user && (
        

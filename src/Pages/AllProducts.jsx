@@ -33,7 +33,7 @@ const AllProducts = () => {
 
   return (
     <div>
-      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', textAlign: 'center' }}>All Courses</h1>
+      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', textAlign: 'center' }}>All Products</h1>
       <div style={{ 'margin': '20px', 'text-align': 'center' }}>
                 <input type="text" onChange={handleSearchChange} className="input input-bordered input-sm w-full max-w-xs" placeholder='search by title' />
             </div>

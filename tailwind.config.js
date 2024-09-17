@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       minHeight: {
-        '1': '14px',  // Custom class for min-height of 1rem
+        '1': '14px', 
       }
     },
   },
