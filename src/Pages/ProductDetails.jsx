@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ProductDetails = () => {
   const ball = useLoaderData();
-//console.log(ball)
+console.log(ball)
   //const { brand, description, image_url, price, title } = course;
   const [title, setTitle] = useState(ball.title);
   const [name, setName] = useState('');

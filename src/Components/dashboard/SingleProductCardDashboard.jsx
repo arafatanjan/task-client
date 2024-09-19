@@ -102,7 +102,7 @@ const handleDelete = async () => {
       <span className="text-white">Delete</span>
     </button>
   </>
-)}    
+)}      
         </div>
       </div>
     </div>

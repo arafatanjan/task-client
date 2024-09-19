@@ -121,7 +121,7 @@ const Products = ({}) => {
 
             <div className="col-md-6 col-sm-6 col-6">
               <div className="row">
-                {filterproduct.slice(4, 8).map((product) => {
+                {filterproduct.slice(4, 8).map((product, key) => {
                   return (
                     <>
                       <div className="col-lg-3 px-1 ">

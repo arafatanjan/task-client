@@ -4,14 +4,14 @@ import './PurchaseDetails.css'
 
 const PurchaseDetails = () => {
     const ball = useLoaderData();
-    //console.log(ball)
+    console.log(ball)
       //const { brand, description, image_url, price, title } = course;
       const [title, setTitle] = useState(ball.title);
       const [name, setName] = useState('');
       const [price, setPrice] = useState(ball.price);
       const [brand, setBrand] = useState(ball.brand);
       const [quantity, setQuantity] = useState(0);
-      const [id, setId] = useState(ball._id);
+      const [id, setId] = useState(ball.id);
       const [description, setDescription] = useState(ball.description);
       const [image_url, setImageURL] = useState(ball.filename);
       const [address, setAddress] = useState(''); 
@@ -36,7 +36,7 @@ const PurchaseDetails = () => {
         if (!window.confirm('Are you sure you want to place order?')) {
           return;
         }
-        await fetch(`https://task-server-fawn.vercel.app/order/${ball._id}`, {
+        await fetch(`https://task-server-fawn.vercel.app/order/${ball.id}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -53,6 +53,7 @@ const PurchaseDetails = () => {
       };
 
     return (
+      
          <div className="details-container" style={{
       display: 'flex',
       justifyContent: 'space-between',
@@ -76,7 +77,7 @@ const PurchaseDetails = () => {
         <img style={{ maxHeight: '300px', width: 'auto' }} src={image_url} alt="product image" />
     </div>
     <div style={{ textAlign: 'center' }}>
-        <h3 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#333', marginBottom: '10px' }}> $ {price} </h3>
+        <h3 style={{ fontSize: '2rem', fontWeight: 'bold', color: '#333', marginBottom: '10px' }}> {price} </h3>
         {/* <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#666', marginBottom: '10px' }}> {brand} </h3> */}
         <p style={{ fontSize: '1.2rem', lineHeight: '1.5', color: '#444' }}> {description} </p>
     </div>
