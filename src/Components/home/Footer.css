@@ -16,8 +16,43 @@
     color: antiquewhite;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0px 0 0px;
 }
+
+.payment-system-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    color: white;
+  }
+
+  payment-system-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5a623; /* Color similar to the text in the image */
+  }
+  
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+  
+  .payment-option img {
+    width: 60px;
+    height: auto;
+    border: 2px solid white;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .payment-option img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+  }
 
 @media only screen and (max-width:576px) {
     .last-container {

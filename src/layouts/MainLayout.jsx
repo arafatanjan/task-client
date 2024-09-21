@@ -11,7 +11,9 @@ const MainLayout = () => {
     return (
         <div>
             {!noNavbarRoutes.includes(location.pathname) && <Navbar />}
+            
             <Outlet/>
+           
             <Footer/>
         </div>
     );

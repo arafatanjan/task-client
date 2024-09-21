@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
           loader: async ({ params }) => {
             const response = await fetch('/services.json');  // Fetch the entire file
             const data = await response.json();             // Parse the JSON file
-            return data.find(service => service.id === params.id);  // Find the product with matching id
+            return data.find(service => service.id == params.id);  // Find the product with matching id
           }
         },
         {

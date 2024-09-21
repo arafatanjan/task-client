@@ -4,11 +4,11 @@ import './PurchaseDetails.css'
 
 const PurchaseDetails = () => {
     const ball = useLoaderData();
-    console.log(ball)
+    // console.log(ball.id)
       //const { brand, description, image_url, price, title } = course;
       const [title, setTitle] = useState(ball.title);
       const [name, setName] = useState('');
-      const [price, setPrice] = useState(ball.price);
+      const [price, setPrice] = useState(ball.discountedprice);
       const [brand, setBrand] = useState(ball.brand);
       const [quantity, setQuantity] = useState(0);
       const [id, setId] = useState(ball.id);
@@ -32,11 +32,11 @@ const PurchaseDetails = () => {
         const address  = form.address.value;
     
         const data = {  name, quantity, price, contact, address };
-        console.log(data)
+        //console.log(data)
         if (!window.confirm('Are you sure you want to place order?')) {
           return;
         }
-        await fetch(`https://task-server-fawn.vercel.app/order/${ball.id}`, {
+        await fetch(`http://localhost:5000/order/${ball.id}`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -44,12 +44,22 @@ const PurchaseDetails = () => {
           },
           body: JSON.stringify(data),
         })
-          .then((res) => res.json())
-          .then((data) =>{window.location.replace(data.url);
-          setShowToast(true);   
-          setTimeout(() => setShowToast(false), 3000); 
-          form.reset();
-          } )
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error('Failed to fetch');
+            }
+            return res.json();
+          })
+          .then((data) => {
+            // window.location.replace(data.url);
+            setShowToast(true);
+            setTimeout(() => setShowToast(false), 3000);
+            form.reset();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            // You can also display an error message to the user here
+          });
       };
 
     return (
