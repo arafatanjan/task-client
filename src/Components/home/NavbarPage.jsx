@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -15,6 +15,14 @@ const NavbarPage = () => {
     await logout()
   }
 
+  
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleDropdown = () => {
+      setIsOpen(!isOpen);
+    };
+  
+
   return (
 
 <div className="topbar" style={{ paddingTop:".5%"}}>
@@ -26,15 +34,27 @@ const NavbarPage = () => {
       <li className="nav-item">     
       <Link className="nav" to={"/complain"}>Complain & Suggestion</Link>
       </li>
-      <li className="nav">
+      <li className="nav dropdown">
           <a className="nav" href="">Track Order</a>
       </li>
       
 
       {!user && (
           <>
-            <li><Link to={"/login"}>Login</Link></li>
+            {/* <li><Link to={"/login"}>Login</Link></li> */}
             {/* <li><Link to={"/register"}>Register</Link></li> */}
+            <div className="dropdown">
+      <button className="dropdown-toggle" onClick={toggleDropdown}>
+        Login
+      </button>
+      {isOpen && (
+        <ul className="dropdown-menu">
+          <li><a href="#action1">A</a></li>
+          <li><a href="#action2">A</a></li>
+          <li><a href="#action3">S</a></li>
+        </ul>
+      )}
+    </div>
           </>
         )}
         {user && (

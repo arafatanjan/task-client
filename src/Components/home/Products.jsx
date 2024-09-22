@@ -20,7 +20,7 @@ const Products = ({}) => {
          setData(await response.clone().json());
          setFilterproduct(await response.json());
         setLoading(false);
-        console.log(filterproduct);
+        //console.log(filterproduct);
       }
       return () => {
         componentMounted = false;
@@ -184,7 +184,7 @@ const Products = ({}) => {
               
             >
               <a
-                href="https://ajkerdeal.com/flash/allflashdeals.aspx"
+                href=""
                 style={{ height: 25, width: 75, marginTop: -3.5 }}
               >
                 All
