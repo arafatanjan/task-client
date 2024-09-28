@@ -18,6 +18,8 @@ import PaymentFail from "../Pages/PaymentFail";
 import MerchantCorner from "../Pages/MerchantCorner";
 import Complain from "../Pages/Complain";
 import PurchaseDetails from "../Pages/PurchaseDetails";
+import BookingForm from "../Pages/BookingForm";
+
 // import Alumni from "../../public/services.json"
 
 
@@ -54,6 +56,10 @@ export const router = createBrowserRouter([
         {
           path: "/complain",
           element: <Complain/>,
+        },       
+        {
+          path: "/booking",
+          element: <BookingForm/>,
         },       
          {
            path: "/payment/success/:tranId",

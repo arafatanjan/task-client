@@ -4,7 +4,7 @@
     text-align: center;
     background-color: #77787B;
     color: #fff;
-    font-size: small;
+    font-size: medium;
     border: none;
      height: 2.8rem; 
     padding-right: 10%;
@@ -78,6 +78,7 @@ li {
 .dropdown {
   position: relative;
   display: inline-block;
+  font-size: medium;
 }
 
 /* Dropdown toggle button */

@@ -28,6 +28,7 @@ const MuslimFashion = () => {
           {categories.map(category => (
             <div key={category.id} className="category-card">
               
+              {/* <a href={`https://ajkerdeal.com/category/womens-fashion-borka-hijab-scarf-${category.id}`}  target="_blank"  style={{ height: '13rem' }}> */}
               <a href={`https://ajkerdeal.com/category/womens-fashion-borka-hijab-scarf-${category.id}`}  target="_blank"  style={{ height: '13rem' }}>
               <img src={category.image} alt={category.name} />
               
